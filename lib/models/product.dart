@@ -29,6 +29,9 @@ class Product {
   /// Get the display price (sale price if available, otherwise regular price)
   double get displayPrice => salePrice ?? price;
 
+  /// Get the original price (always returns the regular price)
+  double get originalPrice => price;
+
   /// Check if product has a discount
   bool get hasDiscount => salePrice != null && salePrice! < price;
 
