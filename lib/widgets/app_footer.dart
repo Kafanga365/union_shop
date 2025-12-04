@@ -34,7 +34,7 @@ class AppFooter extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 32),
-          
+
           // Help and Information Section
           _buildSection(
             'Help and Information',
@@ -44,7 +44,7 @@ class AppFooter extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 32),
-          
+
           // Additional Links Section
           _buildSection(
             'Additional Links',
@@ -56,7 +56,7 @@ class AppFooter extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 32),
-          
+
           // Social Media
           Row(
             children: [
@@ -73,7 +73,7 @@ class AppFooter extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 24),
-          
+
           // Payment methods text
           Text(
             'Payment methods',
@@ -92,7 +92,7 @@ class AppFooter extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          
+
           // Copyright
           Text(
             '© 2025, upsu-store',

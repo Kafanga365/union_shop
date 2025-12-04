@@ -6,7 +6,8 @@ class AppHeader extends StatelessWidget {
 
   const AppHeader({
     super.key,
-    this.bannerText = 'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF!',
+    this.bannerText =
+        'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF!',
   });
 
   void _navigateToHome(BuildContext context) {
