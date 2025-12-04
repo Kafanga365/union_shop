@@ -18,6 +18,10 @@ class AppHeader extends StatelessWidget {
     // Placeholder for buttons that don't work yet
   }
 
+  void _navigateToAuth(BuildContext context) {
+    Navigator.pushNamed(context, '/auth');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -77,7 +81,7 @@ class AppHeader extends StatelessWidget {
                     IconButton(
                       icon: const Icon(Icons.person_outline, size: 20),
                       color: Colors.grey[700],
-                      onPressed: _placeholderCallback,
+                      onPressed: () => _navigateToAuth(context),
                     ),
                     IconButton(
                       icon: const Icon(Icons.shopping_bag_outlined, size: 20),
