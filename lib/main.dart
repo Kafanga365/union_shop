@@ -11,6 +11,7 @@ import 'package:union_shop/pages/personalisation_page.dart';
 import 'package:union_shop/pages/search_page.dart';
 import 'package:union_shop/product_page.dart';
 import 'package:union_shop/providers/cart_provider.dart';
+import 'package:union_shop/providers/auth_provider.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -24,6 +25,7 @@ class UnionShopApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => CartProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: MaterialApp(
         title: 'Union Shop',
