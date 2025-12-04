@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:union_shop/widgets/app_header.dart';
 import 'package:union_shop/widgets/app_footer.dart';
 import 'package:union_shop/services/data_service.dart';
 import 'package:union_shop/models/product.dart';
+import 'package:union_shop/providers/cart_provider.dart';
 
 /// Product detail page showing product information, images, and options
 class ProductPage extends StatefulWidget {
@@ -36,8 +38,28 @@ class _ProductPageState extends State<ProductPage> {
     }
   }
 
-  void _placeholderCallback() {
-    // Placeholder for buttons that don't work yet
+  void _addToCart() {
+    final cart = context.read<CartProvider>();
+    cart.addToCart(
+      product,
+      selectedSize: selectedSize,
+      selectedColor: selectedColor,
+      quantity: quantity,
+    );
+
+    // Show confirmation
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('Added to cart!'),
+        duration: const Duration(seconds: 2),
+        action: SnackBarAction(
+          label: 'View Cart',
+          onPressed: () {
+            Navigator.pushNamed(context, '/cart');
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -76,7 +98,7 @@ class _ProductPageState extends State<ProductPage> {
                     width: double.infinity,
                     height: 56,
                     child: ElevatedButton(
-                      onPressed: _placeholderCallback,
+                      onPressed: _addToCart,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF4d2963),
                         foregroundColor: Colors.white,
