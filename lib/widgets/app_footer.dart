@@ -8,6 +8,10 @@ class AppFooter extends StatelessWidget {
     // Placeholder for footer links that don't work yet
   }
 
+  void _navigateToAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/about');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,13 +50,22 @@ class AppFooter extends StatelessWidget {
           const SizedBox(height: 32),
 
           // Additional Links Section
-          _buildSection(
-            'Additional Links',
-            [
-              'Home',
-              'SALE!',
-              'About',
-              'UPSU.net',
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Additional Links',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+              const SizedBox(height: 12),
+              _buildLink(context, 'Home', _placeholderCallback),
+              _buildLink(context, 'SALE!', _placeholderCallback),
+              _buildLink(context, 'About', () => _navigateToAbout(context)),
+              _buildLink(context, 'UPSU.net', _placeholderCallback),
             ],
           ),
           const SizedBox(height: 32),
@@ -134,6 +147,23 @@ class AppFooter extends StatelessWidget {
               ),
             )),
       ],
+    );
+  }
+
+  Widget _buildLink(BuildContext context, String text, VoidCallback onTap) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 13,
+            color: Colors.grey[700],
+            height: 1.5,
+          ),
+        ),
+      ),
     );
   }
 }
