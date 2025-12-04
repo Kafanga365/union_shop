@@ -28,6 +28,10 @@ class AppHeader extends StatelessWidget {
     Navigator.pushNamed(context, '/cart');
   }
 
+  void _navigateToSearch(BuildContext context) {
+    Navigator.pushNamed(context, '/search');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -82,7 +86,7 @@ class AppHeader extends StatelessWidget {
                     IconButton(
                       icon: const Icon(Icons.search, size: 20),
                       color: Colors.grey[700],
-                      onPressed: _placeholderCallback,
+                      onPressed: () => _navigateToSearch(context),
                     ),
                     IconButton(
                       icon: const Icon(Icons.person_outline, size: 20),

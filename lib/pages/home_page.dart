@@ -8,14 +8,10 @@ import 'package:union_shop/models/product.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  void _placeholderCallback() {
-    // Placeholder for buttons that don't work yet
-  }
-
   @override
   Widget build(BuildContext context) {
     final products = DataService.getAllProducts();
-    
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -44,7 +40,9 @@ class HomePage extends StatelessWidget {
             _buildCollectionSection(
               context,
               'PORTSMOUTH CITY COLLECTION',
-              products.where((p) => p.category == 'Portsmouth City Collection').toList(),
+              products
+                  .where((p) => p.category == 'Portsmouth City Collection')
+                  .toList(),
             ),
 
             // Our Range (Categories)
@@ -115,7 +113,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 ElevatedButton(
-                  onPressed: _placeholderCallback,
+                  onPressed: () => Navigator.pushNamed(context, '/sale'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF4d2963),
                     foregroundColor: Colors.white,
@@ -182,7 +180,7 @@ class HomePage extends StatelessWidget {
           if (products.length > 4) ...[
             const SizedBox(height: 24),
             TextButton(
-              onPressed: _placeholderCallback,
+              onPressed: () => Navigator.pushNamed(context, '/collection'),
               child: const Text(
                 'View all products in the collection',
                 style: TextStyle(
@@ -219,10 +217,10 @@ class HomePage extends StatelessWidget {
             runSpacing: 16,
             alignment: WrapAlignment.center,
             children: [
-              _buildCategoryCard('Clothing'),
-              _buildCategoryCard('Merchandise'),
-              _buildCategoryCard('Graduation'),
-              _buildCategoryCard('SALE'),
+              _buildCategoryCard(context, 'Clothing'),
+              _buildCategoryCard(context, 'Merchandise'),
+              _buildCategoryCard(context, 'Graduation'),
+              _buildCategoryCard(context, 'SALE'),
             ],
           ),
         ],
@@ -230,9 +228,9 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryCard(String category) {
+  Widget _buildCategoryCard(BuildContext context, String category) {
     return GestureDetector(
-      onTap: _placeholderCallback,
+      onTap: () => Navigator.pushNamed(context, '/collections'),
       child: Container(
         width: 150,
         height: 150,
@@ -280,7 +278,7 @@ class HomePage extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           ElevatedButton(
-            onPressed: _placeholderCallback,
+            onPressed: () => Navigator.pushNamed(context, '/personalisation'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF4d2963),
               foregroundColor: Colors.white,
