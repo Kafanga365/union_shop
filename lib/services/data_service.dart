@@ -100,6 +100,44 @@ class DataService {
             'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=500',
         category: 'Portsmouth City Collection',
       ),
+
+      // New Products
+      Product(
+        id: 'crested-notebook-1',
+        name: 'University Crested Notebook',
+        description:
+            'Premium A5 hardback notebook featuring the official University of Portsmouth crest. Perfect for lectures, notes, and journaling with 200 lined pages.',
+        price: 12.99,
+        imageUrl:
+            'https://images.unsplash.com/photo-1517842645767-c639042777db?w=500',
+        category: 'Merchandise',
+        sizes: [],
+        colors: ['Navy', 'Black'],
+      ),
+      Product(
+        id: 'graduation-bear-1',
+        name: 'Graduation Teddy Bear',
+        description:
+            'Adorable graduation bear dressed in official University robes and mortarboard. A perfect keepsake or gift to commemorate your graduation day. Height: 25cm.',
+        price: 18.50,
+        imageUrl:
+            'https://images.unsplash.com/photo-1551361415-69c87624334f?w=500',
+        category: 'Graduation',
+        sizes: [],
+        colors: [],
+      ),
+      Product(
+        id: 'crested-badge-1',
+        name: 'University Enamel Pin Badge',
+        description:
+            'High-quality enamel pin badge featuring the University of Portsmouth crest. Perfect for jackets, bags, or lanyards. Comes with secure butterfly clasp backing.',
+        price: 5.99,
+        imageUrl:
+            'https://images.unsplash.com/photo-1611652022419-a9419f74343a?w=500',
+        category: 'Merchandise',
+        sizes: [],
+        colors: [],
+      ),
     ];
   }
 
